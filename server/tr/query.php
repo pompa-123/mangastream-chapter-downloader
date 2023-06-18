@@ -12,9 +12,10 @@ if (empty($auth)) {
  exit();
 }
 
-if ($auth != "AUTH") {
+if ($auth != "AUTH") { // Doğrulama Kontrolü
    exit();
 }
+// Mysql Bilgileri
 $host = "localhost";
 $db = "dbname";
 $user = "user";
@@ -32,7 +33,7 @@ if ($sorgu->rowCount() <= 0) {
 $sonuc = $sorgu->fetchAll();
 echo'<h1 class="entry-title">'.$sonuc[0]["post_name"].'</h1>';
 $json = $sonuc[0]["post_content"];
-$jsonString = str_replace(utf8_encode("<img"),"<img id='pompala'",$json);
+$jsonString = str_replace(utf8_encode("<img"),"<img id='icerik'",$json);
 
 print_r ($jsonString);
 }
