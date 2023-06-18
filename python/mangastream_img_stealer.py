@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 select = input("Tekli(1) or Çoklu(2):")
 
 if(select == "1"):
-    id2 = input("ID:s ")
+    id2 = input("ID: ")
     url = "https://example.com/query.php?&auth=AUTH&id="+id2
     idclass = "aligncenter size-full "
     r = requests.get(url)
